@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Main layout */
+body {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'subnav'
+    'main'
+    'footer';
+}
+header {
+  background: hotpink;
+  grid-area: header;
+}
+body > nav {
+  background: rebeccapurple;
+  grid-area: subnav;
+}
+main {
+  background: dodgerblue;
+  grid-area: main;
+}
+footer {
+  background: goldenrod;
+  grid-area: footer;
+}
+
+/* Persons */
+main {
+  padding: 2rem;
+}
+main ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+main li {
+  display: block;
+  padding: 1rem;
+  width: 10rem;
+  height: 6rem;
+  background: tomato;
+  border-radius: 1rem;
+}
+
+@media (min-width: 40rem) {
+  body {
+    grid-template-columns: 10rem 1fr;
+    grid-template-areas:
+      'header header'
+      'subnav main'
+      'footer footer';
+  }
+}
